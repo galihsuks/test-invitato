@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import imgElemen1 from "@/public/elemen1.svg";
 
 export default function Home() {
+    /* eslint-disable  @typescript-eslint/no-explicit-any */
     const loadfirst = useRef(false);
     const audioRef = useRef<HTMLAudioElement | null>(null);
     const [openMenu, setOpenMenu] = useState(false);
@@ -66,6 +67,7 @@ export default function Home() {
     const [minutes, setMinutes] = useState(0);
     const [seconds, setSeconds] = useState(0);
     useEffect(() => {
+        /* eslint-disable  @typescript-eslint/no-explicit-any */
         const expireTime = "2024-12-25 15:00:00";
 
         // Fungsi untuk menghitung selisih waktu dan mengonversi ke format hari, jam, menit, detik
@@ -118,7 +120,9 @@ export default function Home() {
                 }
             }
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [music]);
+
     useEffect(() => {
         if (!loadfirst.current) {
             loadfirst.current = true;
